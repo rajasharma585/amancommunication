@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .m {
+            height: 540px;
+            width: 1000px;
+            background-color: rgb(232, 190, 168);
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .row1 {
+            height: 40px;
+            width: 100%;
+            background-color: blue;
+            color: white;
+            line-height: 40px;
+        }
+
+        .row2 {
+            width: 100%;
+            height: 40px;
+            background-color: pink;
+            display: flex;
+        }
+
+        .col1,
+        .col2,
+        .col3,
+        .col4,
+        .col5 {
+            flex: 1;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .row3 {
+            margin-top: 10px;
+        }
+
+        .row3-col1 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .col6,
+        .col7,
+        .col8,
+        .col9,
+        .col10 {
+            height: 40px;
+            width: 19%;
+            /* Equal spacing for all columns */
+            text-align: center;
+            line-height: 40px;
+            color: white;
+        }
+
+        .col6 {
+            background-color: red;
+        }
+
+        .col7 {
+            background-color: yellow;
+            color: black;
+        }
+
+        .col8 {
+            background-color: green;
+        }
+
+        .col9 {
+            background-color: red;
+        }
+
+        .col10 {
+            background-color: pink;
+            color: black;
+        }
+
+        .img img {
+            margin-top: 10px;
+            height: 200px;
+            width: 750px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="m">
+            <!-- Row 1: Header Text -->
+            <div class="row1">
+                Welcome to Aman Communication
+            </div>
+
+            <!-- Row 2: Navigation Links -->
+            <div class="row2">
+                <div class="col1">
+                    <a href="home.html" target="_blank">Home</a>
+                </div>
+                <div class="col2">
+                    <a href="about.html" target="_blank">About</a>
+                </div>
+                <div class="col3">
+                    <a href="cafe.html" target="_blank">Cafe</a>
+                </div>
+                <div class="col4">
+                    Gallery
+                </div>
+                <div class="col5">
+                    <a href="contact.html" target="_blank">Contact</a>
+                </div>
+            </div>
+
+            <!-- Row 3: Additional Navigation -->
+            <div class="row3">
+                <div class="row3-col1">
+                    <div class="col6">Home</div>
+                    <div class="col7">About</div>
+                    <div class="col8">Course</div>
+                    <div class="col9">Gallery</div>
+                    <div class="col10">Contact us</div>
+                </div>
+            </div>
+
+            <!-- Image Section -->
+            <div class="img">
+                <img src="computer.jpg" alt="Computer Image">
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
