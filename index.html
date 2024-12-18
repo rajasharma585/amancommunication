@@ -1125,38 +1125,61 @@
     }
 
 
+   .testimonials {
+    background-color: #10b1da;
+    padding: 50px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.testimonial-card {
+    background-color: #d4e673;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 300px;
+    display: inline-block;
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.testimonial-card span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Mobile view ke liye */
+@media (max-width: 768px) {
     .testimonials {
-        background-color: #10b1da;
-        padding: 50px;
-        text-align: center;
+        padding: 30px;
     }
 
     .testimonials h2 {
-        font-size: 32px;
-        margin-bottom: 40px;
+        font-size: 28px;
+        margin-bottom: 30px;
     }
 
     .testimonial-card {
-        background-color: #d4e673;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px;
-        width: 300px;
-        display: inline-block;
-        text-align: left;
+        width: 90%; /* Screen size ke mutabik adjust kare */
+        margin: 0 auto 20px; /* Center align aur spacing adjust kare */
+        text-align: center; /* Text ko center align kare */
     }
 
     .testimonial-card p {
-        font-size: 16px;
-        color: #555;
-        margin-bottom: 10px;
+        font-size: 14px;
     }
+}
 
-    .testimonial-card span {
-        font-weight: bold;
-        color: #333;
-    }
 
     .special-offers {
         background-color: #fff;
@@ -1492,7 +1515,6 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="team.html">Team</a></li>
                 </ul>
             </nav>
         </header>
@@ -1531,7 +1553,7 @@
         <div class="row">
             <!-- Image Section -->
             <div class="img">
-                <img src="cheap.jpg" alt="Affordable">
+                <img src="affordable.png" alt="Affordable">
             </div>
 
             <!-- Text Section -->
@@ -1546,7 +1568,7 @@
         <div class="row">
             <!-- Image Section -->
             <div class="img">
-                <img src="speed.jpg" alt="Fast Service">
+                <img src="fastservice.jpg" alt="Fast Service">
             </div>
 
             <!-- Text Section -->
@@ -1617,6 +1639,9 @@
             <li>Courier Services</li>
             <li>Mobile & Laptop Repairing</li>
             <li>Smart Card Printing (For various government services)</li>
+             <li>Passport Size Photo</li>
+             <li>Drivery Licence</li>
+            <li>Hotel Booking</li>
         </ul>
 
     </section>
@@ -1694,7 +1719,7 @@
 
             <!-- Service 2 -->
             <div class="service-card">
-                <img src="service2.jpg" alt="Gaming Zone" class="service-img">
+                <img src="gamingzone.jpg" alt="Gaming Zone" class="service-img">
                 <h3>Exclusive Gaming Zone</h3>
                 <p class="service-description">A dedicated gaming area with the latest gaming PCs and consoles. Enjoy
                     smooth gaming experiences with high-end graphics and fast internet. Suitable for casual gamers and
@@ -1704,7 +1729,7 @@
 
             <!-- Service 3 -->
             <div class="service-card">
-                <img src="service3.jpg" alt="3D Printing" class="service-img">
+                <img src="3dprinting.jpg" alt="3D Printing" class="service-img">
                 <h3>3D Printing Services</h3>
                 <p class="service-description">Our new 3D printing service will allow you to print custom objects,
                     prototypes, and models in high quality. Perfect for students, professionals, and creators looking to
@@ -1714,7 +1739,7 @@
 
             <!-- Service 4 -->
             <div class="service-card">
-                <img src="service4.jpg" alt="Photo Printing" class="service-img">
+                <img src="photoprinting.jpg" alt="Photo Printing" class="service-img">
                 <h3>High-Quality Photo Printing</h3>
                 <p class="service-description">Get your photos printed in high resolution on a variety of mediums, from
                     standard paper to canvas. Our photo printing service will be perfect for personal, family, and
@@ -1724,7 +1749,7 @@
 
             <!-- Service 5 -->
             <div class="service-card">
-                <img src="service5.jpg" alt="Cybersecurity Training" class="service-img">
+                <img src="cybersecurity.jpg" alt="Cybersecurity Training" class="service-img">
                 <h3>Cybersecurity Training Sessions</h3>
                 <p class="service-description">In response to increasing cyber threats, we will soon offer cybersecurity
                     training for individuals and small businesses. Learn how to protect your online presence, safeguard
