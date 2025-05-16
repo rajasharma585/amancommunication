@@ -1484,62 +1484,76 @@
     }
 
     .stats-section {
-  background-color: #f8f9fa;
-  padding: 60px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-}
+      background: linear-gradient(135deg, #1d3557, #457b9d);
+      color: #fff;
+      padding: 80px 20px;
+    }
 
-.stats-header h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #222;
-}
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
 
-.stats-header p {
-  color: #555;
-  font-size: 16px;
-  margin-bottom: 40px;
-}
+    .stats-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-.stats-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
+    .stats-header h2 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
 
-.stat-card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  padding: 30px 20px;
-  width: 250px;
-  transition: transform 0.3s ease;
-}
+    .stats-header p {
+      font-size: 1.1rem;
+      color: #dce3ea;
+    }
 
-.stat-card:hover {
-  transform: translateY(-10px);
-}
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
 
-.stat-icon i {
-  font-size: 40px;
-  color: #007bff;
-  margin-bottom: 15px;
-}
+    .stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 30px;
+      border-radius: 12px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
 
-.stat-number {
-  font-size: 28px;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 8px;
-}
+    .stat-card:hover {
+      transform: translateY(-6px);
+    }
 
-.stat-label {
-  font-size: 16px;
-  color: #555;
-}
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #f1faee;
+    }
 
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #f1faee;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .stat-card {
+        width: 100%;
+      }
+    }
 </style>
 
 <!-- <body style="background-image: url('bac.jpeg'); background-size: cover;"> -->
@@ -1677,31 +1691,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <section class="stats-section">
-  <div class="container">
-    <div class="stats-header">
-      <h2>Our Achievements</h2>
-      <p>We’ve helped thousands of clients with reliable, quality-driven services.</p>
-    </div>
+    <div class="container">
+      <div class="stats-header">
+        <h2>Our Achievements</h2>
+        <p>We’ve helped thousands of clients with reliable, quality-driven services.</p>
+      </div>
 
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fas fa-users"></i></div>
-        <div class="stat-number">30000+</div>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
-        <div class="stat-number">25000+</div>
-        <div class="stat-label">Finished Work</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fas fa-boxes"></i></div>
-        <div class="stat-number">30+</div>
-        <div class="stat-label">Products & Services</div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-number" data-target="30000">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-number" data-target="25000">0</div>
+          <div class="stat-label">Finished Work</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-boxes"></i></div>
+          <div class="stat-number" data-target="30">0</div>
+          <div class="stat-label">Products & Services</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
     <section id="services" class="services">
@@ -2196,6 +2210,29 @@
     window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   }
 </script>
+
+<script>
+  // Counter animation with "+" at the end
+  const counters = document.querySelectorAll('.stat-number');
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText.replace(/[^0-9]/g, '');
+      const increment = target / 200;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment).toLocaleString();
+        setTimeout(updateCount, 10);
+      } else {
+        counter.innerText = target.toLocaleString() + "+";
+      }
+    };
+
+    updateCount();
+  });
+</script>
+
         <style>
             body {
                 font-family: Arial, sans-serif;
