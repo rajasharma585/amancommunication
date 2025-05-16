@@ -711,11 +711,11 @@
     }
 
     /* Social Media Icons (Top-right) */
-    .social-icons {
+/*     .social-icons {
         position: absolute;
         top: 20px;
         right: 20px;
-    }
+    } */
 
     .social-icons a {
         text-decoration: none;
@@ -1126,39 +1126,50 @@
 
 
    .testimonials {
-    background-color: #10b1da;
+    background-color: #e0f7fa; /* Soft light blue background */
     padding: 50px;
     text-align: center;
 }
 
 .testimonials h2 {
     font-size: 32px;
+    color: #34495e; /* Dark Slate Gray */
     margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow: hidden; /* Hide excess content */
+    justify-content: center;
+    position: relative;
 }
 
 .testimonial-card {
-    background-color: #d4e673;
+    background-color: #ffffff; /* White background */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+    margin-right: 20px;
     width: 300px;
-    display: inline-block;
     text-align: left;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+    border: 1px solid #b0bec5; /* Subtle border for a clean look */
 }
 
 .testimonial-card p {
     font-size: 16px;
-    color: #555;
+    color: #607d8b; /* Soft grey text */
     margin-bottom: 10px;
 }
 
 .testimonial-card span {
     font-weight: bold;
-    color: #333;
+    color: #2c3e50; /* Slightly darker grey for name */
 }
 
-/* Mobile view ke liye */
+/* Mobile view for carousel */
 @media (max-width: 768px) {
     .testimonials {
         padding: 30px;
@@ -1170,16 +1181,43 @@
     }
 
     .testimonial-card {
-        width: 90%; /* Screen size ke mutabik adjust kare */
-        margin: 0 auto 20px; /* Center align aur spacing adjust kare */
-        text-align: center; /* Text ko center align kare */
+        width: 90%; /* Adjust width for mobile */
+        margin: 0 auto 20px;
+        text-align: center;
     }
 
     .testimonial-card p {
         font-size: 14px;
     }
-}
 
+    /* Carousel sliding effect */
+    .testimonial-carousel {
+        display: flex;
+        animation: slide 20s infinite linear;
+    }
+
+    /* Keyframes for sliding animation */
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        20% {
+            transform: translateX(-100%);
+        }
+        40% {
+            transform: translateX(-200%);
+        }
+        60% {
+            transform: translateX(-300%);
+        }
+        80% {
+            transform: translateX(-400%);
+        }
+        100% {
+            transform: translateX(-500%);
+        }
+    }
+}
 
     .special-offers {
         background-color: #fff;
@@ -1494,7 +1532,7 @@
         </div>
 
         <!-- Social Media Icons - Positioned Top Right -->
-        <div class="social-icons">
+<!--         <div class="social-icons">
             <h6>Connect Us</h6>
             <a href="https://wa.me/917439184361" target="_blank" title="WhatsApp">
                 <i class="bi bi-whatsapp"></i>
@@ -1505,7 +1543,7 @@
             <a href="https://www.facebook.com/" target="_blank" title="Facebook">
                 <i class="bi bi-facebook"></i>
             </a>
-        </div>
+        </div> -->
 
         <!-- Site Header and Navigation -->
         <header class="site-header">
@@ -1527,7 +1565,7 @@
     <div class="container">
         <!-- Marquee Section -->
         <marquee behavior="scroll" direction="left">
-            For any query please contact: 9128764589 or 7439184361
+            For any query please contact: 7439184361
         </marquee>
 
         <!-- Main Message -->
@@ -1662,7 +1700,7 @@
                 </div>
                 <!-- Social Media Icons under the Bio -->
                 <div class="social-iconss">
-                    <a href="https://wa.me/9128764589" target="_blank" title="WhatsApp">
+                    <a href="https://wa.me/7439184361" target="_blank" title="WhatsApp">
                         <i class="bi bi-whatsapp"></i>
                     </a>
                     <a href="https://www.instagram.com/mr_developer07/" target="_blank" title="Instagram">
@@ -1687,7 +1725,7 @@
                 </div>
                 <!-- Social Media Icons under the Bio -->
                 <div class="social-iconss">
-                    <a href="https://wa.me/9128764589" target="_blank" title="WhatsApp">
+                    <a href="https://wa.me/7439184361" target="_blank" title="WhatsApp">
                         <i class="bi bi-whatsapp"></i>
                     </a>
                     <a href="https://www.instagram.com/mr_developer07/" target="_blank" title="Instagram">
@@ -1705,7 +1743,7 @@
     <!-- Contact Form Section -->
     <section id="contact" class="contact-form">
         <h2>Send Us Your Query</h2>
-        <form action="mailto:rajadeveloper585@gmail.com" method="post" enctype="text/plain">
+        <form action="mailto:rajadeveloper585@gmail.com" method="post" enctype="text/plain" id="contactForm">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="tel" name="phone" placeholder="Your Phone Number" required>
             <textarea name="query" rows="5" placeholder="Your Query" required></textarea>
@@ -1827,7 +1865,7 @@
 
         <div class="booking-section">
             <h2>Book Our Services Online</h2>
-            <form action="book_service.php" method="POST" class="booking-form">
+            <form action="book_service.php" method="POST" class="booking-form" id="booking-form">
                 <div class="form-group">
                     <label for="service">Select Service:</label>
                     <select id="service" name="service" required>
@@ -1887,7 +1925,7 @@
                 <input type="email" id="email" name="email" required placeholder="Enter your email address">
             </div> -->
 
-                <button type="submit" class="book-now-btn">Book Now</button>
+                 <button type="button" class="book-now-btn" onclick="redirectToWhatsApp()">Book Now</button>
             </form>
         </div>
 
@@ -2058,6 +2096,57 @@
                 }
             }
         </script>
+        <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Get the form data
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var query = document.getElementById("query").value;
+
+        // Create the WhatsApp message
+        var message = `Name: ${name}\nPhone: ${phone}\nQuery: ${query}`;
+
+        // WhatsApp link (using the international format of the phone number)
+        var whatsappNumber = "7439184361"; // Replace with the desired WhatsApp number
+        var whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        // Redirect to WhatsApp with the message
+        window.open(whatsappURL, "_blank");
+    });
+</script>
+        <script>
+    function redirectToWhatsApp() {
+        // Get form values
+        var service = document.getElementById('service').value;
+        var date = document.getElementById('date').value;
+        var name = document.getElementById('name').value;
+        var contact = document.getElementById('contact').value;
+
+        // Check if all required fields are filled
+        if (service && date && name && contact) {
+            // WhatsApp phone number (replace with your own)
+            var phoneNumber = '7439184361';
+
+            // Construct the message
+            var message = `Hi, I would like to book the following service:\n\n` +
+                          `Service: ${service}\n` +
+                          `Date: ${date}\n` +
+                          `Name: ${name}\n` +
+                          `Contact Number: ${contact}\n\n` +
+                          `Please confirm my booking.`;
+
+            // Encode the message for URL
+            var encodedMessage = encodeURIComponent(message);
+
+            // Redirect to WhatsApp with the message
+            window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        } else {
+            alert("Please fill out all fields.");
+        }
+    }
+</script>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -2236,7 +2325,7 @@
             </div>
 
             <p>&copy; 2024 Aman Communication | Your Trusted Digital Partner. All Rights Reserved.</p>
-            <p>Developed by <strong>Raja Sharma</strong></p>
+            <p>Developed by <strong>R Sharma</strong></p>
         </footer>
 </body>
 
