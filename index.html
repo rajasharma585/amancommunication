@@ -1515,6 +1515,64 @@
         background-color: #34495e;
         padding: 10px 0;
     }
+
+    .stats-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.stats-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.stats-header p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+}
+
+.stat-icon i {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #555;
+}
+
 </style>
 
 <!-- <body style="background-image: url('bac.jpeg'); background-size: cover;"> -->
@@ -1523,11 +1581,12 @@
     <div class="info">
         <div class="e">
             <div>
-                <h1>Aman Communication</h1>
-                <h2>Cyber Cafe Services</h2>
-                <h5>All Online Services | Cyber Cafe | Jamo Bazar, Siwan</h5>
-                <p>All Types of Online Work Done Here</p>
-                <p>Contact Us - 7439184361</p>
+                  <h1>📡 Aman Communication</h1>
+                  <h2>💻 Cyber Cafe Services</h2>
+                  <h3>🎯 Your Digital Hangout Spot</h3>
+                  <h5>🌐 All Online Services | 🖥️ Cyber Cafe | 📄 Digital Assistance</h5>
+                  <p>✅ All Types of Online Work Done Here</p>
+                  <p>📞 Contact Us: <strong>7439184361</strong></p>
             </div>
         </div>
 
@@ -1569,8 +1628,8 @@
         </marquee>
 
         <!-- Main Message -->
-        <p>"Visit our cyber cafe for high-speed internet, printing, scanning. Your digital sanctuary for work and
-            play!"</p>
+        <p>"Visit our cyber cafe for high-speed internet, printing, scanning & More. Fast and Reliable Internet. Your digital sanctuary for work and
+            play. Come, Connect & Get Work Done"</p>
 
         <!-- Why Choose Us Section -->
         <div class="row">
@@ -1646,6 +1705,37 @@
 
 
     <!-- </footer> -->
+
+    <!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-header">
+      <h2>Our Achievements</h2>
+      <p>We’ve helped thousands of clients with reliable, quality-driven services.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-number">30000+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="stat-number">25000+</div>
+        <div class="stat-label">Finished Work</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-boxes"></i></div>
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Products & Services</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <section id="services" class="services">
         <h2>Our Services</h2>
@@ -1743,12 +1833,12 @@
     <!-- Contact Form Section -->
     <section id="contact" class="contact-form">
         <h2>Send Us Your Query</h2>
-        <form action="mailto:rajadeveloper585@gmail.com" method="post" enctype="text/plain" id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="tel" name="phone" placeholder="Your Phone Number" required>
-            <textarea name="query" rows="5" placeholder="Your Query" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+        <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+  <input type="text" name="name" id="name" placeholder="Your Name" required>
+  <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" required>
+  <textarea name="query" rows="5" id="query" placeholder="Your Query" required></textarea>
+  <button type="submit">Send</button>
+</form>
     </section>
     <div class="upcoming-services">
         <h2>Upcoming Services</h2>
@@ -1865,7 +1955,7 @@
 
         <div class="booking-section">
             <h2>Book Our Services Online</h2>
-            <form action="book_service.php" method="POST" class="booking-form" id="booking-form">
+            <form  id="booking-form">
                 <div class="form-group">
                     <label for="service">Select Service:</label>
                     <select id="service" name="service" required>
@@ -2096,56 +2186,44 @@
                 }
             }
         </script>
-        <script>
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting normally
+       <script>
+  function sendToWhatsApp(event) {
+    event.preventDefault(); // prevent actual form submission
 
-        // Get the form data
-        var name = document.getElementById("name").value;
-        var phone = document.getElementById("phone").value;
-        var query = document.getElementById("query").value;
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const query = document.getElementById("query").value;
 
-        // Create the WhatsApp message
-        var message = `Name: ${name}\nPhone: ${phone}\nQuery: ${query}`;
+    const message = `📩 *New Contact Query*\n\n` +
+                    `👤 *Name:* ${name}\n` +
+                    `📞 *Phone:* ${phone}\n` +
+                    `💬 *Query:* ${query}`;
 
-        // WhatsApp link (using the international format of the phone number)
-        var whatsappNumber = "7439184361"; // Replace with the desired WhatsApp number
-        var whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappNumber = "7439184361"; // Replace with your WhatsApp number
 
-        // Redirect to WhatsApp with the message
-        window.open(whatsappURL, "_blank");
-    });
+    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  }
 </script>
-        <script>
-    function redirectToWhatsApp() {
-        // Get form values
-        var service = document.getElementById('service').value;
-        var date = document.getElementById('date').value;
-        var name = document.getElementById('name').value;
-        var contact = document.getElementById('contact').value;
 
-        // Check if all required fields are filled
-        if (service && date && name && contact) {
-            // WhatsApp phone number (replace with your own)
-            var phoneNumber = '7439184361';
+      <script>
+  function redirectToWhatsApp() {
+    const service = document.getElementById('service').value;
+    const date = document.getElementById('date').value;
+    const name = document.getElementById('name').value;
+    const contact = document.getElementById('contact').value;
 
-            // Construct the message
-            var message = `Hi, I would like to book the following service:\n\n` +
-                          `Service: ${service}\n` +
-                          `Date: ${date}\n` +
-                          `Name: ${name}\n` +
-                          `Contact Number: ${contact}\n\n` +
-                          `Please confirm my booking.`;
+    const message = `📝 *New Service Booking Request*\n\n` +
+                    `🔹 *Service:* ${service || 'Not specified'}\n` +
+                    `📅 *Date:* ${date || 'Not specified'}\n` +
+                    `👤 *Name:* ${name || 'Not provided'}\n` +
+                    `📞 *Contact:* ${contact || 'Not provided'}`;
 
-            // Encode the message for URL
-            var encodedMessage = encodeURIComponent(message);
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '7439184361';
 
-            // Redirect to WhatsApp with the message
-            window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-        } else {
-            alert("Please fill out all fields.");
-        }
-    }
+    window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  }
 </script>
         <style>
             body {
