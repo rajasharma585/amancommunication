@@ -2212,49 +2212,31 @@
 </script>
 
 <script>
-    // Function to animate counting
-    function animateCountUp(counter) {
-      const target = +counter.getAttribute('data-target');
-      const duration = 2000; // milliseconds
-      const stepTime = 10;
-      const totalSteps = duration / stepTime;
-      const increment = target / totalSteps;
-      let count = 0;
+  // Counter animation with "+" at the end — 10 seconds duration
+  const counters = document.querySelectorAll('.stat-number');
 
-      const update = () => {
-        count += increment;
-        if (count < target) {
-          counter.innerText = Math.ceil(count).toLocaleString();
-          setTimeout(update, stepTime);
-        } else {
-          counter.innerText = target.toLocaleString() + "+";
-        }
-      };
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const duration = 10000; // 10 seconds
+    const frameRate = 10;   // ms per frame
+    const totalFrames = duration / frameRate;
+    const increment = target / totalFrames;
+    let count = 0;
 
-      update();
-    }
+    const updateCount = () => {
+      count += increment;
+      if (count < target) {
+        counter.innerText = Math.ceil(count).toLocaleString();
+        setTimeout(updateCount, frameRate);
+      } else {
+        counter.innerText = target.toLocaleString() + "+";
+      }
+    };
 
-    // IntersectionObserver to trigger animation on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const counters = entry.target.querySelectorAll('.stat-number');
-          counters.forEach(counter => {
-            if (!counter.classList.contains('counted')) {
-              animateCountUp(counter);
-              counter.classList.add('counted');
-            }
-          });
-          observer.unobserve(entry.target); // Stop observing after animation starts
-        }
-      });
-    }, {
-      threshold: 0.5
-    });
+    updateCount();
+  });
+</script>
 
-    const statsSection = document.querySelector('#statsSection');
-    observer.observe(statsSection);
-  </script>
 
         <style>
             body {
