@@ -1124,101 +1124,68 @@
         background-color: #128C7E;
     }
 
-
-   .testimonials {
-    background-color: #e0f7fa; /* Soft light blue background */
-    padding: 50px;
-    text-align: center;
-}
-
-.testimonials h2 {
-    font-size: 32px;
-    color: #34495e; /* Dark Slate Gray */
-    margin-bottom: 40px;
-    font-weight: bold;
-}
-
-.testimonial-carousel {
-    display: flex;
-    overflow: hidden; /* Hide excess content */
-    justify-content: center;
-    position: relative;
-}
-
-.testimonial-card {
-    background-color: #ffffff; /* White background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
-    margin-right: 20px;
-    width: 300px;
-    text-align: left;
-    flex-shrink: 0;
-    transition: transform 0.5s ease;
-    border: 1px solid #b0bec5; /* Subtle border for a clean look */
-}
-
-.testimonial-card p {
-    font-size: 16px;
-    color: #607d8b; /* Soft grey text */
-    margin-bottom: 10px;
-}
-
-.testimonial-card span {
-    font-weight: bold;
-    color: #2c3e50; /* Slightly darker grey for name */
-}
-
-/* Mobile view for carousel */
-@media (max-width: 768px) {
-    .testimonials {
-        padding: 30px;
+.testimonials {
+      background-color: #e0f7fa; /* Soft light blue background */
+      padding: 50px;
+      text-align: center;
+      overflow: hidden; /* Hide extra content */
+      position: relative;
     }
-
+    
     .testimonials h2 {
+      font-size: 32px;
+      color: #34495e; /* Dark Slate Gray */
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+    
+    /* Carousel container that holds all testimonial cards */
+    .testimonial-carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    /* Testimonial card style */
+    .testimonial-card {
+      background-color: #ffffff; /* White background */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+      margin-right: 20px;
+      width: 300px;
+      text-align: left;
+      flex-shrink: 0;
+      border: 1px solid #b0bec5; /* Subtle border for a clean look */
+    }
+    
+    .testimonial-card p {
+      font-size: 16px;
+      color: #607d8b; /* Soft grey text */
+      margin-bottom: 10px;
+    }
+    
+    .testimonial-card span {
+      font-weight: bold;
+      color: #2c3e50; /* Darker grey for name */
+    }
+    
+    /* Responsive adjustments for mobile view */
+    @media (max-width: 768px) {
+      .testimonials {
+        padding: 30px;
+      }
+    
+      .testimonials h2 {
         font-size: 28px;
         margin-bottom: 30px;
-    }
-
-    .testimonial-card {
+      }
+    
+      .testimonial-card {
         width: 90%; /* Adjust width for mobile */
         margin: 0 auto 20px;
         text-align: center;
+      }
     }
-
-    .testimonial-card p {
-        font-size: 14px;
-    }
-
-    /* Carousel sliding effect */
-    .testimonial-carousel {
-        display: flex;
-        animation: slide 20s infinite linear;
-    }
-
-    /* Keyframes for sliding animation */
-    @keyframes slide {
-        0% {
-            transform: translateX(0);
-        }
-        20% {
-            transform: translateX(-100%);
-        }
-        40% {
-            transform: translateX(-200%);
-        }
-        60% {
-            transform: translateX(-300%);
-        }
-        80% {
-            transform: translateX(-400%);
-        }
-        100% {
-            transform: translateX(-500%);
-        }
-    }
-}
-
     .special-offers {
         background-color: #fff;
         padding: 50px;
@@ -1893,64 +1860,68 @@
         <p><strong>Weekend Special:</strong> Get 20% off on internet usage from 10 AM to 2 PM every Saturday and Sunday.
         </p>
     </div>
-    <div class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card">
-            <p>"Aman Communication offers the fastest internet services. I never had any trouble with browsing or gaming
-                here!"</p>
-            <span>- Rajeev Kumar</span>
-        </div>
+     <div class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial-card">
+          <p>"Aman Communication offers the fastest internet services. I never had any trouble with browsing or gaming here!"</p>
+          <span>- Rajeev Kumar</span>
+      </div>
+      <div class="testimonial-card">
+          <p>"Their printing and photocopy services are top-notch. Highly recommended for anyone looking for fast and reliable service."</p>
+          <span>- Suman Yadav</span>
+      </div>
+      <div class="testimonial-card">
+          <p>"I use their cyber cafe regularly. The staff is friendly, and the gaming zone is just amazing!"</p>
+          <span>- Neha Sharma</span>
+      </div>
+      <div class="testimonial-card">
+          <p>"Aman Communication has been a great help for my passport services and document printing. I highly recommend them for all types of online work!"</p>
+          <span>- Amit Verma</span>
+      </div>
+      <div class="testimonial-card">
+          <p>"I regularly use their internet services. The speed is exceptional and the customer service is always top notch. Always happy with their services!"</p>
+          <span>- Priya Mehta</span>
+      </div>
+      <div class="testimonial-card">
+          <p>"I booked my railway tickets through Aman Communication. The process was quick and easy. Definitely my go-to place for all such services!"</p>
+          <span>- Manoj Yadav</span>
+      </div>
+      <div class="testimonial-card">
+          <p>"Their gaming zone is amazing! I’ve spent hours there and it’s a great place to unwind. Definitely the best cyber cafe in the area!"</p>
+          <span>- Rahul Kumar</span>
+      </div>
+      <div class="testimonial-card">
+          <p>"I used their Aadhar print and PAN card services. The staff is helpful and everything was completed on time. Highly satisfied!"</p>
+          <span>- Anjali Sharma</span>
+      </div>
 
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card">
-            <p>"Their printing and photocopy services are top-notch. Highly recommended for anyone looking for fast and
-                reliable service."</p>
-            <span>- Suman Yadav</span>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card">
-            <p>"I use their cyber cafe regularly. The staff is friendly, and the gaming zone is just amazing!"</p>
-            <span>- Neha Sharma</span>
-        </div>
-
-        <!-- Testimonial 4 -->
-        <div class="testimonial-card">
-            <p>"Aman Communication has been a great help for my passport services and document printing. I highly
-                recommend them for all types of online work!"</p>
-            <span>- Amit Verma</span>
-        </div>
-
-        <!-- Testimonial 5 -->
-        <div class="testimonial-card">
-            <p>"I regularly use their internet services. The speed is exceptional and the customer service is always top
-                notch. Always happy with their services!"</p>
-            <span>- Priya Mehta</span>
-        </div>
-
-        <!-- Testimonial 6 -->
-        <div class="testimonial-card">
-            <p>"I booked my railway tickets through Aman Communication. The process was quick and easy. Definitely my
-                go-to place for all such services!"</p>
-            <span>- Manoj Yadav</span>
-        </div>
-
-        <!-- Testimonial 7 -->
-        <div class="testimonial-card">
-            <p>"Their gaming zone is amazing! I’ve spent hours there and it’s a great place to unwind. Definitely the
-                best cyber cafe in the area!"</p>
-            <span>- Rahul Kumar</span>
-        </div>
-
-        <!-- Testimonial 8 -->
-        <div class="testimonial-card">
-            <p>"I used their Aadhar print and PAN card services. The staff is helpful and everything was completed on
-                time. Highly satisfied!"</p>
-            <span>- Anjali Sharma</span>
-        </div>
-
-
+      <div class="testimonial-card">
+        <p>"The customer service here is fantastic! The team is friendly and handles queries efficiently."</p>
+        <span>- Vikram Singh</span>
+    </div>
+    <div class="testimonial-card">
+        <p>"Needed urgent document scanning, and they completed it quickly with great quality. Highly reliable service!"</p>
+        <span>- Pooja Reddy</span>
+    </div>
+    <div class="testimonial-card">
+        <p>"Their printing quality is superb! I get all my business documents printed here, and they always deliver perfect results."</p>
+        <span>- Arjun Malhotra</span>
+    </div>
+    <div class="testimonial-card">
+        <p>"I had an urgent passport renewal request, and they made the process incredibly smooth for me!"</p>
+        <span>- Sneha Kapoor</span>
+    </div>
+    <div class="testimonial-card">
+        <p>"I use their internet services daily. The speed is excellent, and the connection is always stable!"</p>
+        <span>- Manish Tiwari</span>
+    </div>
+    <div class="testimonial-card">
+        <p>"Aman Communication helped me with my college admission forms. The service was quick and hassle-free!"</p>
+        <span>- Divya Saxena</span>
+    </div>
+    </div>
+  </div>
 
 
         <div class="booking-section">
@@ -2405,6 +2376,29 @@
             <p>&copy; 2024 Aman Communication | Your Trusted Digital Partner. All Rights Reserved.</p>
             <p>Developed by <strong>R Sharma</strong></p>
         </footer>
+
+  <script>
+    // Reference the carousel container and individual testimonial cards.
+    const carousel = document.querySelector('.testimonial-carousel');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const totalCards = cards.length;
+    let currentIndex = 0;
+
+    // Function to slide the testimonials.
+    function slideTestimonials() {
+      // Get current computed width (including right margin of 20px)
+      let cardWidth = cards[0].offsetWidth + 20;
+      
+      // Increase index for next slide and loop back when necessary
+      currentIndex = (currentIndex + 1) % totalCards;
+      
+      // Apply a translation based on the current index
+      carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+    
+    // Automatically slide every 3 seconds.
+    setInterval(slideTestimonials, 3000);
+  </script>
 </body>
 
 </html>
