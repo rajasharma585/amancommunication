@@ -1972,12 +1972,12 @@
 
                 <div class="form-group">
                     <label for="name">Your Name:</label>
-                    <input type="text" id="yourname" name="yourname" required placeholder="Enter your full name">
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
                 </div>
 
                 <div class="form-group">
                     <label for="contact">Contact Number:</label>
-                    <input type="tel" id="contactno" name="contactno" required placeholder="Enter your phone number"
+                    <input type="tel" id="contact" name="contact" required placeholder="Enter your phone number"
                         pattern="[0-9]{10}">
                 </div>
 
@@ -2181,14 +2181,14 @@
   function redirectToWhatsApp() {
     const service = document.getElementById('service').value;
     const date = document.getElementById('date').value;
-    const name = document.getElementById('yourname').value;
-    const contact = document.getElementById('contactno').value;
+    const name = document.getElementById('name').value;
+    const contact = document.getElementById('contact').value;
 
-    const message = `📝 *New Service Booking Request*\n\n` +
-                    `🔹 *Service:* ${service || 'Not specified'}\n` +
-                    `📅 *Date:* ${date || 'Not specified'}\n` +
-                    `👤 *Name:* ${yourname || 'Not provided'}\n` +
-                    `📞 *Contact:* ${contactno || 'Not provided'}`;
+    const message = ` *New Service Booking Request*\n\n` +
+                    ` *Service:* ${service || 'Not specified'}\n` +
+                    ` *Date:* ${date || 'Not specified'}\n` +
+                    ` *Name:* ${name || 'Not specified'}\n` +
+                    ` *Contact:* ${contact || 'Not provided'}`;
 
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = '7439184361';
